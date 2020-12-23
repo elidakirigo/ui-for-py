@@ -25,7 +25,7 @@ $('#pwd_index_btn').click(function (e) {
     e.preventDefault();
 
     const password = document.getElementById('auth_pwd').value;
-
+    
     const get_pwd = JSON.stringify({
         pwd: 'get_pwd'
     })

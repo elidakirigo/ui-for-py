@@ -19,6 +19,10 @@ td {
     font-weight: bold;
 }
 
+#notifications #timeSection {
+    padding-left: 2em;
+}
+
 #part1 span,
 #identity {
     display: inline-block;
@@ -157,6 +161,12 @@ td {
 .success {
     color: #008cff;
     display: none;
+}
+
+#notifications label,
+#notifications h6 {
+    font-size: 1em;
+    font-weight: bold;
 }
 
 @media screen and (min-width : 850px) {
@@ -348,6 +358,7 @@ td {
 
     #notifications .form-group {
         padding-top: 1em;
+        font-size: 1em;
     }
 
 }
@@ -541,6 +552,7 @@ td {
 
     #notifications .form-group {
         padding-top: 1em;
+        font-size: 1em;
     }
 }
 
@@ -733,6 +745,7 @@ td {
 
     #notifications .form-group {
         padding-top: 1em;
+        font-size: 1em;
     }
 }
 

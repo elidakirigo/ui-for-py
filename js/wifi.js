@@ -1,11 +1,10 @@
 var count1 = 0;
-let get_wifi_data;
+let get_wifi_data, selected_button;
 const auth = window.sessionStorage.getItem('admin');
 
 const root = 'file://';
 
 const url = '/home/pi/n6/raspberry-ui/';
-
 
 // const root = 'http:/';
 
@@ -14,7 +13,7 @@ const url = '/home/pi/n6/raspberry-ui/';
 if (auth == '' || auth == null) {
 
     window.location = root + url + 'index.html';
-    
+
 }
 const checkCount = () => {
     let select_button = document.querySelectorAll('.wifiSelect');
@@ -23,6 +22,7 @@ const checkCount = () => {
 
             select_button[index].addEventListener('click', () => {
                 // console.log('clicked');
+                select_button = () => index;
                 $('.body').css('display', 'block');
                 $('#dialogBox').fadeIn(2000);
                 let selected_wifi_data = {
@@ -38,7 +38,8 @@ const checkCount = () => {
         }
     }
 }
-// checkCount()
+checkCount()
+
 function scanResults() {
     // reload();
     try {
@@ -106,7 +107,7 @@ function scanResults() {
 
 
             });
-
+            checkCount()
         };
 
     } catch (e) {
@@ -167,12 +168,11 @@ document.getElementById('WIFIReset').addEventListener('click', () => {
 document.getElementById('WIFIJoin').addEventListener('click', (e) => {
     e.preventDefault();
     let results = get_wifi_data();
-    $('#dialogBox').fadeOut(2000);
-    $('.body').css('display', 'none');
 
     let wifi_data = JSON.stringify({
         'wifi_ssid': results.wifi_ssid,
-        'wifi_password': document.getElementById('WIFIpwd').value
+        'wifi_password': document.getElementById('WIFIpwd').value,
+        'response': 0
     })
 
     try {
@@ -193,6 +193,27 @@ document.getElementById('WIFIJoin').addEventListener('click', (e) => {
         };
         ws.onmessage = function (e) {
 
+            const data = JSON.parse(e.data);
+
+            if (data.response == 1) {
+
+                $('#dialogBox').fadeOut(2000);
+
+                $('.body').css('display', 'none');
+
+                document.querySelectorAll('.wifiSelect')[selected_button()].innerHTML = 'connected';
+
+            } else if (data.response == 0) {
+
+                $('.response').html('the password is not correct');
+
+                setTimeout(() => {
+
+                    $('#dialogBox').fadeOut(2000);
+
+                    $('.body').css('display', 'none');
+                }, 1000);
+            }
         };
 
     } catch (e) {

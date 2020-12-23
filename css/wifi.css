@@ -1,5 +1,3 @@
-
-
 @media (min-width :600px) and (max-width: 850px) {
     body {
         background-color: #EEF7FD;
@@ -17,6 +15,11 @@
     .well {
         background-color: white;
         box-shadow: 4px 5px 6px #9c9c9c !important;
+        margin-bottom: .6em;
+    }
+
+    #table {
+        width: 100%;
     }
 
     .scan {
@@ -28,7 +31,6 @@
     p {
         font-weight: bold;
     }
-
 }
 
 @media screen and (min-width: 850px) {
@@ -81,6 +83,11 @@
     .well {
         background-color: white;
         box-shadow: 4px 5px 6px #9c9c9c !important;
+        margin-bottom: .6em;
+    }
+
+    #table {
+        width: 100%;
     }
 
     .scan {
@@ -95,11 +102,9 @@
     }
 
 }
-
-* {
+body {
     text-transform: capitalize;
 }
-
 #table::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */

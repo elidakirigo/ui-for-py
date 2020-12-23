@@ -1,8 +1,3 @@
-setInterval(() => {
-    $('#liq_level').css('color', 'red');
-    $('#liq_level').fadeToggle(1000);
-}, 200);
-
 const initColorPicker = () => {
     var canvas = document.getElementById('colorCanvas');
     var ctx = canvas.getContext('2d');
@@ -20,8 +15,8 @@ const initColorPicker = () => {
     ctx.fillRect(145, 5, 30, 30);
     // ctx.fillStyle = "#FF7F00";
     // ctx.fillRect(215, 5, 30, 30);
-    ctx.fillStyle = "#7F00FF";
-    ctx.fillRect(180, 5, 30, 30);
+    //ctx.fillStyle = "#7F00FF";
+    //ctx.fillRect(180, 5, 30, 30);
     // ctx.fillStyle = "#7F00FF";
     // ctx.fillRect(215, 5, 30, 30);
     // ctx.fillStyle = "#7F00FF";
@@ -160,10 +155,10 @@ setInterval(() => {
             let liquid_data = data.level;
             if (liquid_data == 1) {
 
-                // setInterval(() => {
+                setInterval(() => {
                     $('#liq_level').css('color', 'red');
                     $('#liq_level').fadeToggle(1000);
-                // }, 200);
+                }, 200);
 
                 $('#liq_level').removeClass('fa-battery-full');
                 $('#liq_level').addClass('fa-battery-empty');
@@ -180,4 +175,4 @@ setInterval(() => {
         console.log("Err Connecting" + e);
         // reload();
     }
-}, 1000);
+}, 10000);

@@ -8,8 +8,6 @@ connecting to the http.
  ----------------------------
  */
 
-//retrieving data
-let email_info, sms_info, email_liq_info, sms_liq_info;
 (function () {
     try {
         let update = JSON.stringify({
@@ -32,95 +30,108 @@ let email_info, sms_info, email_liq_info, sms_liq_info;
         };
         ws.onmessage = function (e) {
             let data = JSON.parse(e.data);
-
             let returned_data = Object.keys(data);
-
-            if (returned_data == 'TempAlert') {
+           /*  if (returned_data == 'TempAlert') {
                 if (data.TempAlert == 1) {
                     $('#tempAlert').attr('checked', 'checked');
                 } else {
                     setTimeout(() => {
                         $('#tempAlert').removeAttr('checked');
                     }, 10);
-                    // this one is false returning 0/ /since it has been changed back.
                 }
             } else if (returned_data == 'liquidAlert') {
                 if (data.liquidAlert == 1) {
                     $('#liquidLevel').attr('checked', 'checked');
-                    // this part returns 1 since the button is clicked and active
                 } else {
                     setTimeout(() => {
                         $('#liquidLevel').removeAttr('checked');
                     }, 10);
-                    // this one is false returning 0/ /since it has been changed back.
                 }
-            } else if (returned_data == 'checkedPump1') {
+            }*/ if (returned_data == 'checkedPump1') {
                 if (data.checkedPump1 == 1) {
                     $('#checkedPump1').attr('checked', 'checked');
-                    // this part returns 1 since the button is clicked and active
                 } else {
                     setTimeout(() => {
                         $('#checkedPump1').removeAttr('checked');
                     }, 10);
-                    // this one is false returning 0/ /since it has been changed back.
                 }
             } else if (returned_data == 'checkedPump2') {
                 if (data.checkedPump2 == 1) {
                     $('#checkedPump2').attr('checked', 'checked');
-                    // this part returns 1 since the button is clicked and active
                 } else {
                     setTimeout(() => {
                         $('#checkedPump2').removeAttr('checked');
                     }, 10);
-                    // this one is false returning 0/ /since it has been changed back.
                 }
             } else if (returned_data == 'temp_email') {
-                email_info = data.temp_email;
                 if (data.temp_email == 1) {
                     $('#temp_email').attr('checked', 'checked');
-                    // this part returns 1 since the button is clicked and active
                 } else {
                     setTimeout(() => {
                         $('#temp_email').removeAttr('checked');
                     }, 10);
-                    // this one is false returning 0/ /since it has been changed back.
                 }
             } else if (returned_data == 'temp_sms') {
-                sms_info = data.temp_sms;
 
                 if (data.temp_sms == 1) {
                     $('#temp_sms').attr('checked', 'checked');
-                    // this part returns 1 since the button is clicked and active
                 } else {
                     setTimeout(() => {
                         $('#temp_sms').removeAttr('checked');
                     }, 10);
-                    // this one is false returning 0/ /since it has been changed back.
                 }
             } else if (returned_data == 'liq_email') {
-                email_liq_info = data.liq_email;
 
                 if (data.liq_email == 1) {
                     $('#liq_email').attr('checked', 'checked');
-                    // this part returns 1 since the button is clicked and active
                 } else {
                     setTimeout(() => {
                         $('#liq_email').removeAttr('checked');
                     }, 10);
-                    // this one is false returning 0/ /since it has been changed back.
                 }
             } else if (returned_data == 'liq_sms') {
-                sms_liq_info = data.liq_sms;
 
                 if (data.liq_sms == 1) {
                     $('#liq_sms').attr('checked', 'checked');
-                    // this part returns 1 since the button is clicked and active
                 } else {
                     setTimeout(() => {
                         $('#liq_sms').removeAttr('checked');
                     }, 10);
-                    // this one is false returning 0/ /since it has been changed back.
                 }
+            } /* else if (returned_data == 'dailyReport') {
+
+                if (data.dailyReport == 1) {
+                    $('#dailyReport').attr('checked', 'checked');
+                } else {
+                    setTimeout(() => {
+                        $('#dailyReport').removeAttr('checked');
+                    }, 10);
+                }
+            }*/ else if (returned_data == 'rep_email') {
+
+                if (data.rep_email == 1) {
+                    $('#rep_email').attr('checked', 'checked');
+                } else {
+                    setTimeout(() => {
+                        $('#rep_email').removeAttr('checked');
+                    }, 10);
+                }
+            } else if (returned_data == 'rep_sms') {
+
+                if (data.rep_sms == 1) {
+                    $('#rep_sms').attr('checked', 'checked');
+                } else {
+                    setTimeout(() => {
+                        $('#rep_sms').removeAttr('checked');
+                    }, 10);
+                }
+            } else if (returned_data[0] == 'report_time') {
+
+                let time_selected, hours = data.hours, minutes = data.minutes
+
+                time_selected = [hours, minutes].join(':');
+
+                document.getElementById('time').value = time_selected;
             }
         }
 
@@ -146,7 +157,7 @@ function failedesults(id) {
     $('#' + id + ' .failed').fadeIn(4000);
     $('#' + id + ' .failed').fadeOut(2000);
 }
-
+/*
 document.querySelector('#tempAlert + span').addEventListener('click', e => {
     var data = document.getElementById('tempAlert').checked;
 
@@ -180,8 +191,7 @@ document.querySelector('#tempAlert + span').addEventListener('click', e => {
             console.log("closed connection");
             //reload();
         };
-        ws.onmessage = function (e) {
-        };
+        ws.onmessage = function (e) {};
 
     } catch (e) {
         console.log("Error Connecting" + e);
@@ -195,13 +205,11 @@ document.querySelector('#liquidLevel + span').addEventListener('click', e => {
     if (liq_data == false) {
         liq_data = true;
         $('#liquidLevel').attr('checked', 'checked');
-        // this part returns 1 since the button is clicked and active
     } else {
         setTimeout(() => {
             $('#liquidLevel').removeAttr('checked');
         }, 10);
         liq_data = false;
-        // this one is false returning 0/ /since it has been changed back.
     }
     let liquid_data = JSON.stringify({
         'liquidLevel': liq_data
@@ -225,11 +233,8 @@ document.querySelector('#liquidLevel + span').addEventListener('click', e => {
         };
         ws.onmessage = function (e) {
             console.log("Received: '" + e.data + "'");
-            //document.getElementById('temp').innerHTML=e.data;
 
-            setTimeout(function () {
-                //document.getElementById('temp').innerHTML="0.0";
-            }, 5000);
+            setTimeout(function () {}, 5000);
         };
 
     } catch (e) {
@@ -238,8 +243,7 @@ document.querySelector('#liquidLevel + span').addEventListener('click', e => {
         //reload();
     }
 })
-
-
+*/
 //
 document.getElementById('tempButton').addEventListener('click', e => {
 
@@ -389,7 +393,7 @@ document.getElementById('passwordButton').addEventListener('click', e => {
         ws.onopen = function () {
             console.log('WebSocket Client Connected');
             ws.send(pwd);
-            successReturn('main2');
+            successReturn('pwd_success');
             nullifyInput('password');
 
         };
@@ -474,7 +478,7 @@ document.getElementById('re-boot').addEventListener('click', e => {
         shut_down_data: shut_down,
         reboot_data: reboot
     });
-   
+
     try {
         console.log('Connnecting...');
         const ws = new WebSocket('ws://127.0.0.1:8989')
@@ -507,7 +511,7 @@ document.getElementById('re-boot').addEventListener('click', e => {
         //reload();
     }
 })
- 
+
 document.getElementById('MachineButton').addEventListener('click', e => {
 
     e.preventDefault();
@@ -524,7 +528,7 @@ document.getElementById('MachineButton').addEventListener('click', e => {
         ws.onopen = function () {
             console.log('WebSocket Client Connected');
             ws.send(machine);
-            successReturn('system-credential');
+            successReturn('machine_success');
             nullifyInput('Machine_name');
 
         };
@@ -664,9 +668,9 @@ document.getElementById('submit_btn1').addEventListener('click', () => {
                 console.log('WebSocket Client Connected');
                 ws.send(output);
 
-                email_results.forEach(element => {
-                    element.value = '';
-                });
+                /* email_results.forEach(element => {
+                     element.value = '';
+                 });*/
                 successReturn('f_dynamic1')
             };
             ws.onerror = function () {
@@ -686,7 +690,7 @@ document.getElementById('submit_btn1').addEventListener('click', () => {
             failedesults('checkedPump2')
             //reload();
         }
-      
+
         for (let index = 0; index < email_results.length; index++) {
             //nullifyButton('dynamic_table1', index);
         }
@@ -713,10 +717,10 @@ document.getElementById('submit_btn2').addEventListener('click', () => {
                 console.log('WebSocket Client Connected');
                 ws.send(output1);
                 successReturn('f_dynamic2')
-                
-                phone_inputs.forEach(element => {
-                    element.value = '';
-                });
+
+                /*  phone_inputs.forEach(element => {
+                      element.value = '';
+                  });*/
 
             };
             ws.onerror = function () {
@@ -780,7 +784,7 @@ document.querySelector('#temp_email + span').addEventListener('click', e => {
             //reload();
         };
         ws.onmessage = function (e) {
-           
+
         };
 
     } catch (e) {
@@ -792,7 +796,7 @@ document.querySelector('#temp_email + span').addEventListener('click', e => {
 
 document.querySelector('#temp_sms + span').addEventListener('click', e => {
     var data = document.getElementById('temp_sms').checked;
-    
+
     if (data == false) {
         data = true;
         $('#temp_sms').attr('checked', 'checked');
@@ -943,7 +947,190 @@ document.querySelector('#liq_sms + span').addEventListener('click', e => {
         //reload();
     }
 })
+document.querySelector('#rep_email + span').addEventListener('click', e => {
+    var data = document.getElementById('rep_email').checked;
+    //console.log(data, 'data1')
+    if (data == false) {
+        data = true;
+        $('#rep_email').attr('checked', 'checked');
+    } else {
+        setTimeout(() => {
+            $('#rep_email').removeAttr('checked');
+        }, 1000);
+        data = false;
+        // this one is false returning 0/ /since it has been changed back.
+    }
 
+    //now we need to make JSON string t o s//end //ok
+
+    let rep_email_data = JSON.stringify({
+        'rep_email': data
+    });
+    try {
+        console.log('Connnecting...');
+        const ws = new WebSocket('ws://127.0.0.1:8989')
+
+        ws.onopen = function () {
+            console.log('WebSocket Client Connected');
+            ws.send(rep_email_data);
+            //successReturn('liquidLevel')
+        };
+        ws.onerror = function () {
+            console.log("No connection");
+            //reload();
+        };
+        ws.onclose = function () {
+            console.log("closed connection");
+            //reload();
+        };
+        ws.onmessage = function (e) {
+            console.log("Received: '" + e.data + "'");
+            //document.getElementById('temp').innerHTML=e.data;
+            setTimeout(function () {
+                //document.getElementById('temp').innerHTML="0.0";
+            }, 5000);
+        };
+
+    } catch (e) {
+        console.log("Error Connecting" + e);
+        //failedesults('liquidLevel')
+        //reload();
+    }
+})
+document.querySelector('#rep_sms + span').addEventListener('click', e => {
+    var data = document.getElementById('rep_sms').checked;
+    //console.log(data, 'data1')
+    if (data == false) {
+        data = true;
+        $('#rep_sms').attr('checked', 'checked');
+    } else {
+        setTimeout(() => {
+            $('#rep_sms').removeAttr('checked');
+        }, 1000);
+        data = false;
+        // this one is false returning 0/ /since it has been changed back.
+    }
+
+    //now we need to make JSON string t o s//end //ok
+
+    let rep_sms_data = JSON.stringify({
+        'rep_sms': data
+    });
+    try {
+        console.log('Connnecting...');
+        const ws = new WebSocket('ws://127.0.0.1:8989')
+
+        ws.onopen = function () {
+            console.log('WebSocket Client Connected');
+            ws.send(rep_sms_data);
+            //successReturn('liquidLevel')
+        };
+        ws.onerror = function () {
+            console.log("No connection");
+            //reload();
+        };
+        ws.onclose = function () {
+            console.log("closed connection");
+            //reload();
+        };
+        ws.onmessage = function (e) {
+            console.log("Received: '" + e.data + "'");
+            //document.getElementById('temp').innerHTML=e.data;
+            setTimeout(function () {
+                //document.getElementById('temp').innerHTML="0.0";
+            }, 5000);
+        };
+
+    } catch (e) {
+        console.log("Error Connecting" + e);
+        //failedesults('liquidLevel')
+        //reload();
+    }
+})
+/*document.querySelector('#dailyReport + span').addEventListener('click', e => {
+    var rep_data = document.getElementById('dailyReport').checked;
+    if (rep_data == false) {
+        rep_data = true;
+        $('#dailyReport').attr('checked', 'checked');
+        // this part returns 1 since the button is clicked and active
+    } else {
+        setTimeout(() => {
+            $('#dailyReport').removeAttr('checked');
+        }, 10);
+        rep_data = false;
+        // this one is false returning 0/ /since it has been changed back.
+    }
+    let report_data = JSON.stringify({
+        'dailyReport': rep_data
+    });
+    try {
+        console.log('Connnecting...');
+        const ws = new WebSocket('ws://127.0.0.1:8989')
+
+        ws.onopen = function () {
+            console.log('WebSocket Client Connected');
+            ws.send(report_data);
+            // successReturn('liquidLevel')
+        };
+        ws.onerror = function () {
+            console.log("No connection");
+            //reload();
+        };
+        ws.onclose = function () {
+            console.log("closed connection");
+            //reload();
+        };
+        ws.onmessage = function (e) {
+            console.log("Received: '" + e.data + "'");
+            //document.getElementById('temp').innerHTML=e.data;
+
+            setTimeout(function () {
+                //document.getElementById('temp').innerHTML="0.0";
+            }, 5000);
+        };
+
+    } catch (e) {
+        console.log("Error Connecting" + e);
+        failedesults('liquidLevel')
+        //reload();
+    }
+})
+*/
+document.getElementById('timeButton').addEventListener('click', () => {
+
+    const report_time = (document.getElementById('time').value).split(':');
+
+    const report_data_time = JSON.stringify({
+        'report_time': 'recieved',
+        'hours': report_time[0],
+        'minutes': report_time[1]
+    });
+    try {
+        console.log('Connnecting...');
+        const ws = new WebSocket('ws://127.0.0.1:8989')
+
+        ws.onopen = function () {
+            console.log('WebSocket Client Connected');
+            ws.send(report_data_time);
+            successReturn('timeSection')
+        };
+        ws.onerror = function () {
+            console.log("No connection");
+            //reload();
+        };
+        ws.onclose = function () {
+            console.log("closed connection");
+            //reload();
+        };
+        ws.onmessage = function (e) {
+        };
+
+    } catch (e) {
+        console.log("Error Connecting" + e);
+        failedesults('liquidLevel')
+        //reload();
+    }
+})
 function reload() {
     console.log("Reload");
     setTimeout(function () {

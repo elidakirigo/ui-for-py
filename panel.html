@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="cdns/font_awesome/font_awesome.css">
     <link rel="stylesheet" href="cdns/material-icon/material_icon.css">
     <link rel="stylesheet" href="css/colorPicker.css">
+    <link rel="stylesheet" href="css/timepicker.css">
     <!-- Compiled and minified JavaScript -->
 
 
@@ -33,7 +34,8 @@
         <section>
             <ul>
                 <li id="a" class="active">
-                    <a href="javascript:void(0)"><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> temperature</a>
+                    <a href="javascript:void(0)"><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
+                        temperature</a>
                 </li>
                 <li id="b">
                     <a href="javascript:void(0)"><i class="fa fa-hand-paper-o"></i> sensors</a>
@@ -82,7 +84,7 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input id="threadshold" type="text" class="use-keyboard-numbers">
-                                    <label for="first_name">high temperature threshold</label>
+                                    <label for="first_name">temperature threshold</label>
                                     <span class="success"><i class="fa fa-check-square"></i></span>
                                     <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
                                 </div><br>
@@ -162,8 +164,20 @@
                             <div class="form-group">
                                 <p>
                                     <label>
-                                        <input class="with-gap" id="tempAlert" name="group1" type="radio" />
+                                        <!-- <input class="with-gap" id="tempAlert" name="group1" type="radio" /> -->
                                         <span>high temperature alert</span>
+
+                                    </label>
+                                    <span class="success"><i class="fa fa-check-square"></i></span>
+                                    <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+                                </p>
+                            </div>
+                            <div class="form-group" style="margin-top: .5em;">
+                                <p>
+                                    <label>
+                                        <!-- <input class="with-gap" id="liquidLevel" name="group2" type="radio" /> -->
+                                        <span>low liquid level alert</span>
+
 
                                     </label>
 
@@ -171,14 +185,13 @@
                                     <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
 
                                 </p>
+                                <label class="sr-only" for=""></label>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="margin-top: .5em;">
                                 <p>
                                     <label>
-                                        <input class="with-gap" id="liquidLevel" name="group2" type="radio" />
-                                        <span>low liquid level alert</span>
-
-
+                                        <!-- <input class="with-gap" id="dailyReport" name="group20" type="radio" /> -->
+                                        <span>daily report</span>
                                     </label>
 
                                     <span class="success"><i class="fa fa-check-square"></i></span>
@@ -222,21 +235,55 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col s4">
+                                        <label>
+                                            <input class="with-gap" id="rep_email" name="group19" type="radio" />
+                                            <span style=" color: transparent;">e</span>
+                                        </label>
+                                    </div>
+                                    <div class="col s4">
+                                        <label>
+                                            <input class="with-gap" id="rep_sms" name="group18" type="radio" />
+                                            <span style=" color: transparent;">e</span>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="main2" style="float: right; margin-right: 3em; font-size: 18px;">
-                <i class="fa fa-battery-empty" id="liq_level" aria-hidden="true"></i>
+            <div class="row" id="timeSection">
+                <div class="col s6" style="margin-top: -6em;">
+                    <h6 style=" margin-bottom: -1em; color: #bbb;">daily report time</h6>
+                    <form>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input type="text" class="timepicker" id="time">
+                            </div><br>
+                            <button style="background-color: #008cff;" id="timeButton" type="button"
+                                class="btn btn-primary">update</button>
+                            <span class="success"><i class="fa fa-check-square"></i></span>
+                            <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="col s6">
+                    <div class="main2" style="float: right; margin-right: 3em; font-size: 18px;">
+                        <i class="fa fa-battery-empty" style="color: #008cff;" id="liq_level" aria-hidden="true"></i>
+                    </div>
+                </div>
             </div>
+
         </div>
         <div id="LED_settings">
             <div id="topic">LED settings</div>
             <div id="main">
                 <div class="row">
                     <div class="col s12">
-                        <canvas id="colorCanvas" width="215" height="40"></canvas>
+                        <canvas id="colorCanvas" width="180" height="40"></canvas>
                     </div>
                     <div class="col s12" style="margin-top:1em ;">
                         <div class="row">
@@ -289,7 +336,7 @@
             </div>
             <div id="main2">
                 <div class="row">
-                    <div class="col s6">
+                    <div class="col s6" id='pwd_success'>
                         <p>machine settings</p>
                         <form action="" method="POST" class="form-inline" role="form">
                             <div class="form-group">
@@ -305,12 +352,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <button id="passwordButton" type="button" class="btn btn-primary settings">update</button>
-                            <span class="success"><i class="fa fa-check-square"></i></span>
+                            <span style="margin:  0 0 0 40%;" class="success"><i class="fa fa-check-square"></i></span>
                             <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+                            <button id="passwordButton" type="button" class="btn btn-primary settings">update</button>
+
                         </form>
                     </div>
-                    <form class="col s6">
+                    <form class="col s6" id='machine_success'>
                         <div class="row" style="margin-top: 2.4em;">
                             <div class="input-field col s11">
                                 <input id="Machine_name" type="text" class="use-keyboard-input">
@@ -318,7 +366,7 @@
 
                             </div><br>
                             <button style="top:0em !important" type="button" id="MachineButton"
-                                class="btn settings btn-primary">update</button>
+                                class="btn settings btn-primary">update</button><br>
                             <span class="success"><i class="fa fa-check-square"></i></span>
                             <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
 
@@ -349,7 +397,8 @@
                             </table>
                         </div>
                         <span style="margin-left:40%;" class="success"><i class="fa fa-check-square"></i></span>
-                        <span style="margin-left:50%;" class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+                        <span style="margin-left:50%;" class="failed"><i class="fa fa-window-close"
+                                aria-hidden="true"></i></span>
                         <button id="submit_btn1" type="button" style="float: right; margin-right: 4%"
                             class="btn btn-small btn-primary">update</button>
                     </form>
@@ -367,9 +416,10 @@
                                     </td>
                                 </tr>
                             </table>
-                        </div> 
+                        </div>
                         <span style="margin-left:40%;" class="success"><i class="fa fa-check-square"></i></span>
-                        <span style="margin-left:50%;" class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+                        <span style="margin-left:50%;" class="failed"><i class="fa fa-window-close"
+                                aria-hidden="true"></i></span>
                         <button id="submit_btn2" type="button" style="float: right;margin-right: 3%"
                             class="btn btn-small btn-primary">update</button>
                     </form>
@@ -393,6 +443,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/bottle_color.js"></script>
     <script src="js/relative.js"></script>
+    <script src="js/timePicker.js"></script>
 </body>
 
 </html>
