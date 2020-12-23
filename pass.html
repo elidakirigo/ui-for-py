@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/S4L_CS6_page_01.png" type="image/x-icon">
+    <title>S4L</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/solid.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="cdns/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="cdns/material-icon/material_icon.css">
+    <link rel="stylesheet" href="cdns/font_awesome/font_awesome.css">
+    <link rel="stylesheet" href="cdns/font_awesome/font_awesome.css">
+    <link rel="stylesheet" href="css/keyboard.css">
+    <link rel="stylesheet" href="css/dialog_index.css">
+    <noscript>this file cannot work without javascipt</noscript>
+</head>
+
+<body>
+    <section class="body">
+        <div id="dialog_index" style="text-align: center;">
+            <h1 class="auth" style="font-size: 15px; color: #909090;font-weight: 100; text-transform: capitalize;">
+                authentication required <br> please enter the password</h1>
+            <p id="ex_section">x</p>
+            <form action="" method="POST" role="form" class="col-md-12">
+                <i id="pwd_eye_front"
+                    style="border: 1px solid #bbbbbb; cursor: pointer; border-radius: 7px; padding: .6em; margin: 0em 0; color: #bbb;float: left;"
+                    class="fa fa-eye-slash" aria-hidden="true"></i>
+                <div class="form-group col-md-8 col-sm-8">
+                    <input type="password" class="form-control use-keyboard-input" placeholder="password" id='auth_pwd'>
+                    <p id="return_ans"></p>
+                </div>
+                <button type="button" id="pwd_index_btn" style="border:1px solid #0c69bf ;color: #0c69bf;"
+                    class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/js/solid.min.js"></script> -->
+    <script src="cdns/jquery.js"></script>
+    <script src="cdns/bootstrap/bootstrap.min.js"></script>
+    <script src="cdns/font_awesome/font_awesome.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/linking.js"></script>
+
+
+</body>
+
+</html>

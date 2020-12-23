@@ -1,0 +1,759 @@
+* {
+    padding: 0 auto;
+    margin: 0;
+}
+
+tr {
+    padding: 0;
+    border: none;
+}
+
+td {
+    padding: 2px 0 !important;
+}
+
+#part1 p,
+#part2 p {
+    color: black;
+    /* display: inline-block; */
+    font-weight: bold;
+}
+
+#part1 span,
+#identity {
+    display: inline-block;
+    font-size: 13px;
+    color: #a8a8a8;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+#identity {
+    font-size: 13px;
+    color: #a8a8a8;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+#part1 .code {
+    color: #cfcfcf;
+    display: inline-block;
+    margin-top: .25em;
+    margin-left: .2em;
+    text-align: center;
+    font-size: 25px;
+}
+
+#part1 .border,
+#part2 .border {
+    margin-top: .3em;
+    padding: 2px;
+    display: inline-block;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+}
+
+#part1 #color_current,
+#part2 #color_update {
+    width: 35px;
+    cursor: pointer;
+    height: 20px;
+    border-radius: 6px;
+    background-color: #008cff;
+}
+
+#part2 {
+    display: inline-block;
+}
+
+#sensors label {
+    margin-top: 8px;
+}
+
+.add_name .btn-primary {
+    background-color: #0c69bf;
+}
+
+.add_name .btn-danger {
+    background-color: #df1a44;
+}
+
+#alerts::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+#alerts::-webkit-scrollbar-track {
+    background: #cfcfcf;
+    /* color of the tracking area */
+}
+
+#alerts::-webkit-scrollbar-thumb {
+    background-color: #0C69BF;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 1px solid white;
+    /* creates padding around scroll thumb */
+}
+
+#show {
+    display: inline-block;
+    border-bottom: 1px solid #4b4b4b;
+    padding-bottom: 3px;
+}
+
+#dev {
+    color: #4b4b4b;
+}
+
+.clik {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 20vh;
+    cursor: pointer;
+}
+
+#panel {
+    font-size: 20px !important;
+}
+
+#alerts {
+    box-shadow: 3px 3px 3px #cfcfcf, -3px -3px -3px #cfcfcf;
+    border-radius: 4px;
+    margin-top: 5px;
+    scrollbar-color: #00b7ff;
+
+}
+
+#inputs {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 50vh;
+}
+
+.delete {
+    width: 50% !important;
+}
+
+.sensorForm {
+    margin-top: 1em;
+}
+
+#temperature #main {
+    padding-top: 3em;
+}
+
+#notifications a {
+    font-weight: bold;
+}
+
+.failed {
+    color: #970303;
+    display: none;
+
+}
+
+.success {
+    color: #008cff;
+    display: none;
+}
+
+@media screen and (min-width : 850px) {
+
+    body {
+        background-color: #EEF7FD;
+    }
+
+    #sidebar {
+        background-color: white;
+        width: 220px;
+        display: block;
+        height: 100vh;
+        text-transform: capitalize !important;
+        box-shadow: 4px 4px 4px #cfcfcf;
+        border-radius: 0 2px 4px 0;
+        overflow: hidden;
+    }
+
+    #sidebar ul {
+        margin-top: -2em;
+        list-style: none;
+        text-decoration: none;
+        padding: 0 0 0 2.5em;
+        font-size: 16px;
+        color: #616161;
+
+    }
+
+    #sidebar ul a .active {
+        color: #0C69BF;
+    }
+
+    #sidebar ul a:hover {
+        color: #0C69BF;
+    }
+
+    #sidebar a {
+        color: #616161;
+    }
+
+    #sidebar a:active {
+        color: #0C69BF;
+
+    }
+
+    .input-field input:focus {
+        border-bottom: 1px solid #0C69BF !important;
+        box-shadow: 0 1px 0 0 #616161;
+    }
+
+    .input-field .prefix.active {
+        color: #0C69BF !important;
+    }
+
+    #sidebar .fa {
+        font-size: 18px;
+    }
+
+    #logo {
+        margin-left: -3.5em;
+    }
+
+    ul .active a {
+        color: #0C69BF !important;
+    }
+
+    #sidebar ul>li {
+        text-decoration: none;
+        padding: 8px 7px;
+    }
+
+    .helper-text .fa-check-square {
+        color: #60a6e7;
+        font-size: 26px;
+        display: none;
+    }
+
+    #temperature .btn,
+    #sensors .btn {
+        background-color: #0C69BF;
+    }
+
+    #sensors .input-field {
+        margin: 0;
+    }
+
+    #sensors p {
+        font-weight: bold;
+    }
+
+    .settings {
+        float: right;
+        position: relative;
+        top: -2em;
+        background-color: #0C69BF !important;
+    }
+
+    #system-settings p {
+        font-weight: bold;
+        margin-top: 1em;
+    }
+
+    .loader {
+        position: absolute;
+        top: 13em;
+        left: 30em;
+    }
+
+    #content {
+        position: absolute;
+        width: calc(65%);
+        text-transform: capitalize !important;
+        border-radius: 8px;
+        height: 370px;
+        box-shadow: 4px 5px 4px #cfcfcf, -4px -5px 4px #cfcfcf;
+        background: white;
+        display: inline-block;
+        top: 70px;
+        left: 230px;
+        background-color: white;
+        padding: 1em 2em;
+        display: none;
+    }
+
+    #control-panel {
+        display: inline-block;
+        position: absolute;
+        color: #616161 !important;
+        text-transform: capitalize !important;
+        font-weight: bold;
+        font-size: 16px;
+        top: 30px;
+        left: 240px;
+    }
+
+    #control-panel a {
+        color: #616161 !important;
+    }
+
+    #control-panel a:hover {
+        color: #0C69BF !important;
+    }
+
+    #system-credential .btn {
+        width: 20%;
+        height: 30px;
+        font-size: 15px;
+        background-color: #0C69BF;
+        padding: 0px 0px !important;
+        text-transform: lowercase;
+        line-height: 9px;
+    }
+
+    #system-credential .change {
+        margin-top: 0px;
+    }
+
+    #system-credential .row {
+        margin: 0;
+        padding-top: 0;
+    }
+
+    #keyboard {
+        position: relative;
+        left: 130px;
+    }
+
+    #footer {
+        display: inline-block;
+        position: absolute;
+        right: 2%;
+        top: 400px;
+        color: #616161;
+        font-size: 12px;
+    }
+
+    #topic {
+        color: #0C69BF;
+        font-size: 22px;
+        text-decoration: underline;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+
+    #notifications #main {
+        padding: 3em 2em;
+    }
+
+    #notifications .form-group {
+        padding-top: 1em;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 850px) {
+
+    body {
+        background-color: #EEF7FD;
+    }
+
+    #sidebar {
+        background-color: white;
+        width: 220px;
+        text-transform: capitalize !important;
+        display: block;
+        height: 100vh;
+        box-shadow: 4px 4px 4px #cfcfcf;
+        border-radius: 0 2px 4px 0;
+        overflow: hidden;
+    }
+
+    #sidebar ul {
+        margin-top: -2em;
+        list-style: none;
+        text-decoration: none;
+        padding: 0 0 0 2.5em;
+        font-size: 12px;
+        color: #616161;
+
+    }
+
+    #sidebar ul a .active {
+        color: #0C69BF;
+    }
+
+    #sidebar ul a:hover {
+        color: #0C69BF;
+    }
+
+    #sidebar a {
+        color: #616161;
+    }
+
+    #sidebar a:active {
+        color: #0C69BF;
+
+    }
+
+    .input-field input:focus {
+        border-bottom: 1px solid #0C69BF !important;
+        box-shadow: 0 1px 0 0 #616161;
+    }
+
+    .input-field .prefix.active {
+        color: #0C69BF !important;
+    }
+
+    #sidebar .fa {
+        font-size: 18px;
+    }
+
+    #logo {
+        margin-left: -3.5em;
+    }
+
+    ul .active a {
+        color: #0C69BF !important;
+    }
+
+    #sidebar ul>li {
+        text-decoration: none;
+        padding: 8px 7px;
+    }
+
+    .helper-text .fa-check-square {
+        color: #60a6e7;
+        font-size: 26px;
+        display: none;
+    }
+
+    #temperature .btn,
+    #sensors .btn {
+        background-color: #0C69BF;
+    }
+
+    #sensors .input-field {
+        margin: 0;
+    }
+
+    #sensors p {
+        font-weight: bold;
+    }
+
+    .settings {
+        float: right;
+        position: relative;
+        top: -2em;
+        background-color: #0C69BF !important;
+    }
+
+    #system-settings p {
+        font-weight: bold;
+        margin-top: 1em;
+    }
+
+    .loader {
+        position: absolute;
+        top: 13em;
+        left: 30em;
+    }
+
+    #content {
+        text-transform: capitalize !important;
+        position: absolute;
+        width: calc(65%);
+        border-radius: 8px;
+        height: 370px;
+        box-shadow: 4px 5px 4px #cfcfcf, -4px -5px 4px #cfcfcf;
+        background: white;
+        display: inline-block;
+        top: 70px;
+        left: 230px;
+        background-color: white;
+        padding: 1em 2em;
+        display: none;
+    }
+
+    #control-panel {
+        display: inline-block;
+        position: absolute;
+        color: #616161 !important;
+        text-transform: capitalize !important;
+        font-weight: bold;
+        font-size: 15px;
+        top: 10px;
+        left: 240px;
+    }
+
+    #control-panel a {
+        color: #616161 !important;
+    }
+
+    #control-panel a:hover {
+        color: #0C69BF !important;
+    }
+
+    #system-credential .btn {
+        width: 20%;
+        height: 30px;
+        font-size: 15px;
+        background-color: #0C69BF;
+        padding: 0px 0px !important;
+        text-transform: lowercase;
+        line-height: 9px;
+    }
+
+    #system-credential .change {
+        margin-top: 0px;
+    }
+
+    #system-credential .row {
+        margin: 0;
+        padding-top: 0;
+    }
+
+    #keyboard {
+        position: relative;
+        left: 130px;
+    }
+
+    #footer {
+        display: inline-block;
+        position: absolute;
+        right: 2%;
+        top: 380px;
+        color: #616161;
+        font-size: 12px;
+    }
+
+    #topic {
+        color: #0C69BF;
+        font-size: 22px;
+        text-decoration: underline;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+
+    #notifications #main {
+        padding: 3em 0em;
+    }
+
+    #notifications .form-group {
+        padding-top: 1em;
+    }
+}
+
+@media (max-width: 716px) {
+
+    body {
+        background-color: #EEF7FD;
+    }
+
+    #sidebar {
+        background-color: white;
+        width: 80px;
+        display: block;
+        text-transform: capitalize !important;
+        height: 100vh;
+        box-shadow: 4px 4px 4px #cfcfcf;
+        border-radius: 0 2px 4px 0;
+        overflow: hidden;
+    }
+
+    #sidebar ul {
+        margin-top: -2em;
+        list-style: none;
+        text-decoration: none;
+        padding: 0 0 0 2.5em;
+        font-size: 12px;
+        color: #616161;
+
+    }
+
+    #sidebar ul a .active {
+        color: #0C69BF;
+    }
+
+    #sidebar ul a:hover {
+        color: #0C69BF;
+    }
+
+    #sidebar a {
+        color: #616161;
+    }
+
+    #sidebar a:active {
+        color: #0C69BF;
+
+    }
+
+    .input-field input:focus {
+        border-bottom: 1px solid #0C69BF !important;
+        box-shadow: 0 1px 0 0 #616161;
+    }
+
+    .input-field .prefix.active {
+        color: #0C69BF !important;
+    }
+
+    #sidebar .fa {
+        font-size: 18px;
+    }
+
+    #logo {
+        margin-left: -1.5em;
+    }
+
+    ul .active a {
+        color: #0C69BF !important;
+    }
+
+    #sidebar ul>li {
+        text-decoration: none;
+        padding: 8px 7px;
+    }
+
+    .helper-text .fa-check-square {
+        color: #60a6e7;
+        font-size: 26px;
+        display: none;
+    }
+
+    #temperature .btn,
+    #sensors .btn {
+        background-color: #0C69BF;
+    }
+
+    #sensors .input-field {
+        margin: 0;
+    }
+
+    #sensors p {
+        font-weight: bold;
+    }
+
+    .settings {
+        float: right;
+        position: relative;
+        top: -2em;
+        background-color: #0C69BF !important;
+    }
+
+    #system-settings p {
+        font-weight: bold;
+        margin-top: 1em;
+    }
+
+    .loader {
+        position: absolute;
+        top: 13em;
+        left: 30em;
+    }
+
+    #content {
+        position: absolute;
+        width: calc(75%);
+        border-radius: 8px;
+        text-transform: capitalize !important;
+        height: 370px;
+        box-shadow: 4px 5px 4px #cfcfcf, -4px -5px 4px #cfcfcf;
+        background: white;
+        display: inline-block;
+        top: 70px;
+        left: 100px;
+        background-color: white;
+        padding: 1em 2em;
+        display: none;
+    }
+
+    #control-panel {
+        display: inline-block;
+        position: absolute;
+        color: #616161 !important;
+        text-transform: capitalize !important;
+        font-weight: bold;
+        font-size: 15px;
+        top: 30px;
+        left: 240px;
+    }
+
+    #control-panel a {
+        color: #616161 !important;
+    }
+
+    #control-panel a:hover {
+        color: #0C69BF !important;
+    }
+
+    #system-credential .btn {
+        width: 20%;
+        height: 30px;
+        font-size: 15px;
+        background-color: #0C69BF;
+        padding: 0px 0px !important;
+        text-transform: lowercase;
+        line-height: 9px;
+    }
+
+    #system-credential .change {
+        margin-top: 0px;
+    }
+
+    #system-credential .row {
+        margin: 0;
+        padding-top: 0;
+    }
+
+    #keyboard {
+        position: relative;
+        left: 90px;
+    }
+
+    #footer {
+        display: inline-block;
+        position: absolute;
+        right: 2%;
+        top: 410px;
+        color: #616161;
+        font-size: 13px;
+    }
+
+    #topic {
+        color: #0C69BF;
+        font-size: 22px;
+        text-decoration: underline;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+
+    #notifications #main {
+        padding: 3em 2em;
+    }
+
+    #notifications .form-group {
+        padding-top: 1em;
+    }
+}
+
+.overflow1::-webkit-scrollbar,
+.overflow2::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+.overflow1::-webkit-scrollbar-track,
+.overflow2::-webkit-scrollbar-track {
+    background: #cfcfcf;
+    /* color of the tracking area */
+}
+
+.overflow1::-webkit-scrollbar-thumb,
+.overflow2::-webkit-scrollbar-thumb {
+    background-color: #0C69BF;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 1px solid white;
+    /* creates padding around scroll thumb */
+}

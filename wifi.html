@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/S4L_CS6_page_01.png" type="image/x-icon">
+    <title>S4L</title>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/keyboard.css">
+    <link rel="stylesheet" href="cdns/font_awesome/font_awesome-_s.css">
+    <link rel="stylesheet" href="cdns/font_awesome/font_awesome.css">
+    <link rel="stylesheet" href="cdns/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="cdns/material-icon/material_icon.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/solid.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/wifi.css">
+    <link rel="stylesheet" href="css/dialog.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="well wifi">
+                scan wifi for access point
+                <a onclick="logOutKey()"
+                    style="cursor: pointer; color: #fff !important;float: right; margin-right: 3em; text-decoration: none;">
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> home page</a>
+            </div>
+            <div class="well network">
+                <div>
+                    <p>network found : <span id="data">0</span></p>
+
+                </div>
+                <button type="button" id="scan_button" class="scan btn btn-primary">scan</button>
+            </div>
+            <section class="body">
+                <div id="dialogBox" style="text-align: center;">
+                    <img src="img/wifi.jpg" alt="" width="80px" height="80px"><br>
+                    <span style="text-align: center !important;" class="nameWI">the WIFI Channel <small
+                            id="wifi_name"></small> requires a WPA password</span>
+                    <p id="ex_section">x</p>
+                    <form>
+                        <div class="row col-md-12">
+                            <div class="input-group col-md-10" style="float: left; margin: 1em 0;">
+                                <input type="password" class="form-control use-keyboard-input" placeholder="password"
+                                    id='WIFIpwd' style="border-radius:6px ;">
+                            </div>
+                            <i id="pwd_eye"
+                                style="border: 1px solid #bbbbbb; cursor: pointer; border-radius: 7px; padding: .6em; margin: 1em 0; color: #bbb;"
+                                class="fa fa-eye-slash" aria-hidden="true"></i>
+                        </div>
+                        <br>
+                        <button style="float: left !important; width: 120px;" id="WIFIJoin" type="button"
+                            class="btn  btn-primary settings">join</button>
+                        <button style="float: right; width: 120px;" id="WIFIReset" type="button"
+                            class="btn btn-primary settings">reset</button>
+                    </form>
+                </div>
+            </section>
+            <div class="well" id="table">
+                <table class="table table-hover" id="table">
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>SSID</th>
+                            <th>select</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="well info">
+                <div class="inf">
+                    <p
+                        style="display: inline; font-size: 12px;font-weight: bold; color: #cf0000ea; text-transform: uppercase;">
+                        info :
+                    </p>
+                    <span>you may have to reload the site to see the result</span>
+                </div>
+                <div class="wpa">
+                    <p style="display: inline;color: #0210cfd0; text-transform:lowercase;">wpa : </p>
+                    <span>WPA / WPA2 auto mode</span>
+                </div>
+            </div>
+            <footer>
+                <div class="container">
+                    <div class="row" style=" margin-right: 3%; float: right; font-size: 10px !important;">
+                        <div style=" display: inline-block;">version 1.5 .</div>
+                        <div style=" display: inline-block;"> <i class="fa fa-copyright" aria-hidden="true"></i>
+                            copyright</div>
+                        <div style=" display: inline-block;">. spray for life</div>
+                    </div>
+                </div>
+
+            </footer>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/js/solid.min.js"></script> -->
+
+    <!-- Bootstrap JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="cdns/jquery.js"></script>
+    <script src="cdns/bootstrap/bootstrap.min.js"></script>
+    <script src="cdns/font_awesome/font_awesome.js"></script>
+    <script src="js/wifi.js"></script>
+    <script src="js/relative.js"></script>
+    <script src="js/keyboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/S4L_CS6_page_01.png" type="image/x-icon">
+    <title>S4L</title>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/cube.css">
+    <link rel="stylesheet" href="css/keyboard.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/solid.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="cdns/materialize/materialize.css">
+    <link rel="stylesheet" href="cdns/font_awesome/font_awesome-_s.css">
+    <link rel="stylesheet" href="cdns/font_awesome/font_awesome.css">
+    <link rel="stylesheet" href="cdns/material-icon/material_icon.css">
+    <link rel="stylesheet" href="css/colorPicker.css">
+    <!-- Compiled and minified JavaScript -->
+
+
+    <link rel="stylesheet" href="css/panel.css">
+    <noscript>this file cannot work without javascipt</noscript>
+</head>
+<!-- phone number  ^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$  -->
+
+<body>
+    <div id="sidebar">
+        <section id="logo">
+            <img src="img/S4L_CS6_page_01.png" alt="" width="300px" height="180px">
+        </section>
+        <section>
+            <ul>
+                <li id="a" class="active">
+                    <a href="#"><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> temperature</a>
+                </li>
+                <li id="b">
+                    <a href="#"><i class="fa fa-hand-paper-o"></i> sensors</a>
+                </li>
+                <li id="c">
+                    <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i> notifications</a>
+                </li>
+                <li id="d">
+                    <a href="#"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> LED settings</a>
+                </li>
+                <li id="e">
+                    <a href="#"><i class="fa fa-cog" aria-hidden="true"></i> system settings</a>
+                </li>
+
+                <li id="g">
+                    <a href="#"><i class="fa fa-user-plus"></i> emails & numbers</a>
+                </li>
+
+            </ul>
+        </section>
+    </div>
+    <div id="control-panel">
+        <span id="panel">spray for life control panel</span>
+        <span id="keyboard"><a style="cursor: pointer;" onclick="logOutKey()"><i class="fa fa-arrow-circle-o-right"
+                    aria-hidden="true"></i>
+                home page</span></a>
+    </div>
+    <div class="loader">
+        <div class="loadingio-spinner-cube-1qa0nx4u8y1">
+            <div class="ldio-brlr46sbmmq">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="temperature">
+            <div id="topic">temperature settings</div>
+            <div id="main">
+                <p>high temperature threshold</p>
+                <form action="" method="POST" class="form-inline" role="form">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="threadshold" type="text" class="use-keyboard-numbers">
+                                    <label for="first_name">high temperature threshold</label>
+                                    <span class="success"><i class="fa fa-check-square"></i></span>
+                                    <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+                                </div><br>
+                                <button id="tempButton" type="button" class="btn btn-primary">update</button>
+                            </div>
+                        </form>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="sensors">
+            <div id="topic">sensors settings</div>
+            <div id="main">
+                <div class="row">
+                    <form class="col s12 sensorForm " id="form1">
+                        <div class="row">
+                            <p>Hand Santizer</p>
+                            <div class="input-field col s6">
+                                <input id="active1" type="text" class="use-keyboard-numbers">
+                                <label for="first_name">active for</label>
+
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="safe1" type="text" class="use-keyboard-numbers">
+                                <label for="safe1">safety delay</label>
+                            </div>
+                        </div>
+                        <p style="display: inline-block; ">
+                            <label>
+                                <input type="checkbox" class="filled-in" id="checkedPump1" />
+                                <span>enable / disable </span>
+                            </label>
+                        </p>
+                        <button style="margin-left:2em" type="button" class="btn btn-primary"
+                            id="sensorButton1">update</button>
+                        <span class="success"><i class="fa fa-check-square"></i></span>
+                        <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+
+                    </form>
+                    <form class="col s12 sensorForm" id="form2">
+
+                        <div class="row">
+                            <p>Foot Sanitizer</p>
+                            <div class="input-field col s6">
+                                <input id="active2" type="text" class="use-keyboard-numbers">
+                                <label for="first_name">active for</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <!-- <input type="color" id="color_picker"> -->
+                                <input id="safe2" type="text" class="use-keyboard-numbers">
+                                <label for="last_name">safety delay</label>
+                            </div>
+                        </div>
+                        <p style="display: inline-block; ">
+                            <label>
+                                <input type="checkbox" class="filled-in" id="checkedPump2" />
+                                <span>enable / disable </span>
+                            </label>
+                        </p>
+                        <button style="margin-left: 2em;" type="button" id="sensorButton2"
+                            class="btn btn-primary">update</button>
+
+                        <span class="success"><i class="fa fa-check-square"></i></span>
+                        <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div id="notifications">
+            <div id="topic">notifications settings</div>
+            <div id="main">
+                <form action="" method="POST" class="form-inline" role="form">
+                    <div class="row">
+                        <div class="col s6" style="margin-top: 2em;">
+                            <div class="form-group">
+                                <p>
+                                    <label>
+                                        <input class="with-gap" id="tempAlert" name="group1" type="radio" />
+                                        <span>high temperature alert</span>
+
+                                    </label>
+
+                                    <span class="success"><i class="fa fa-check-square"></i></span>
+                                    <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <p>
+                                    <label>
+                                        <input class="with-gap" id="liquidLevel" name="group2" type="radio" />
+                                        <span>low liquid level alert</span>
+
+
+                                    </label>
+
+                                    <span class="success"><i class="fa fa-check-square"></i></span>
+                                    <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+
+                                </p>
+                                <label class="sr-only" for=""></label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="email_notification">
+                                <div class="row">
+                                    <div class="col s4">email</div>
+                                    <div class="col s4">sms</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s4">
+                                        <label>
+                                            <input class="with-gap" id="temp_email" name="group3" type="radio" />
+                                            <span style="color: transparent;">e</span>
+                                        </label>
+                                    </div>
+                                    <div class="col s4">
+                                        <label>
+                                            <input class="with-gap" id="temp_sms" name="group4" type="radio" />
+                                            <span style="color: transparent;">e</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s4">
+                                        <label>
+                                            <input class="with-gap" id="liq_email" name="group5" type="radio" />
+                                            <span style=" color: transparent;">e</span>
+                                        </label>
+                                    </div>
+                                    <div class="col s4">
+                                        <label>
+                                            <input class="with-gap" id="liq_sms" name="group6" type="radio" />
+                                            <span style=" color: transparent;">e</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="main2" style="float: right; margin-right: 3em; font-size: 18px;">
+                <i class="fa fa-battery-empty" id="liq_level" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div id="LED_settings">
+            <div id="topic">LED settings</div>
+            <div id="main">
+                <div class="row">
+                    <div class="col s12">
+                        <canvas id="colorCanvas" width="215" height="40"></canvas>
+                    </div>
+                    <div class="col s12" style="margin-top:1em ;">
+                        <div class="row">
+                            <div class="col s5" id="part1">
+                                <p>current color</p><br>
+                                <div class="border">
+                                    <div id="color_current"></div>
+                                </div>
+                                <span>color selected</span>
+
+                            </div>
+                            <div class="col s7" id="part2">
+                                <p>update current colors</p><br>
+                                <div class="border">
+                                    <div id="color_update"></div>
+                                </div>
+                                <span id="identity">led color</span> <br><br>
+                                <button type="button" id="led_button" class="btn btn-primary"
+                                    style="background-color: #008cff!important; width: 50%;">update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="system-settings">
+            <div id="topic">system settings</div>
+            <div id="main">
+                <!-- <p>perform an action</p>
+                <span>system task</span> -->
+                <form action="" method="POST" class="form-inline" role="form">
+                    <div class="form-group">
+                        <p>
+                            <label>
+                                <button type="button" class="btn btn-primary" id="shut-down" style="background-color: #0c69bf;font-weight: bold;
+                                margin-top: 1em;">Shutdown</button>
+
+                            </label>
+
+                            <label>
+                                <button type="button" class="btn btn-primary" id="re-boot" style="background-color: #0c69bf;font-weight: bold;
+                                margin-top: 1em;">Reboot</button>
+                            </label>
+
+                        </p>
+                        <!-- <button type="button" id="checkboxes" class="btn btn-primary settings">perform
+                            action</button> -->
+                    </div>
+                </form>
+            </div>
+            <div id="main2">
+                <div class="row">
+                    <div class="col s6">
+                        <p>machine settings</p>
+                        <form action="" method="POST" class="form-inline" role="form">
+                            <div class="form-group">
+                                <div class="row">
+                                    <i id="pwd_eye"
+                                        style=" float:left; border: 1px solid #bbbbbb; cursor: pointer; border-radius: 50%; padding: .6em; margin: 1.5em 0; color: #bbb;"
+                                        class="fa fa-eye-slash" aria-hidden="true"></i>
+
+                                    <div class="input-field inline col s9">
+
+                                        <input id="password" type="password" class="use-keyboard-input">
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="passwordButton" type="button" class="btn btn-primary settings">update</button>
+                            <span class="success"><i class="fa fa-check-square"></i></span>
+                            <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+                        </form>
+                    </div>
+                    <form class="col s6">
+                        <div class="row" style="margin-top: 2.4em;">
+                            <div class="input-field col s11">
+                                <input id="Machine_name" type="text" class="use-keyboard-input">
+                                <label for="machine_name">Machine Name</label>
+
+                            </div><br>
+                            <button style="top:0em !important" type="button" id="MachineButton"
+                                class="btn settings btn-primary">update</button>
+                            <span class="success"><i class="fa fa-check-square"></i></span>
+                            <span class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="emailnNumbers">
+        <div id="topic">emails and numbers settings</div>
+        <div id="main">
+            <div id="emailsnumbers">
+                <div class="row">
+                    <form action="" class="add_name col s6" id="f_dynamic1">
+                        <span style="color:#b1b1b1 ;text-align: center;">email</span>
+                        <div class="input-group overflow1">
+                            <!-- /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ -->
+                            <table class="table table-bordered table-hover" id="dynamic_table1">
+                                <tr>
+                                    <!-- <td>
+                                            <input type="email" name="" id="input" class="form-control use-keyboard-input">
+                                        </td> -->
+                                    <td>
+                                        <button id="moreButton1" type="button" class="btn btn-small btn-primary"
+                                            style="float: right; margin-right:4% ;">+</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <span style="margin-left:50%;" class="success"><i class="fa fa-check-square"></i></span>
+                        <span style="margin-left:50%;" class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+                        <button id="submit_btn1" type="button" style="float: right; margin-right: 4%"
+                            class="btn btn-small btn-primary">update</button>
+                    </form>
+                    <form action="" class="add_name col s6" id="f_dynamic2">
+                        <span style="color:#b4b3b3 ;text-align: center !important;">phone number</span>
+                        <div class="input-group overflow2">
+                            <table class="table table-bordered table-hover" id="dynamic_table2">
+                                <tr>
+                                    <!-- <td>
+                                            <input type="email" name="" id="input" class="form-control use-keyboard-numbers">
+                                        </td> -->
+                                    <td>
+                                        <button id="moreButton2" type="button" class="btn btn-small btn-primary"
+                                            style="float: right; margin-right:4%;">+</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div> 
+                        <span style="margin-left:50%;" class="success"><i class="fa fa-check-square"></i></span>
+                        <span style="margin-left:50%;" class="failed"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+                        <button id="submit_btn2" type="button" style="float: right;margin-right: 3%"
+                            class="btn btn-small btn-primary">update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">all rights reserved</div>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/js/solid.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="cdns/jquery.js"></script>
+    <script src="cdns/font_awesome/font_awesome.js"></script>
+    <script src="cdns/materialize/materialize.js"></script>
+    <script src="js/numbers.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script src="js/panel.js"></script>
+    <script src="js/requests.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bottle_color.js"></script>
+    <script src="js/relative.js"></script>
+</body>
+
+</html>

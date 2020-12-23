@@ -1,0 +1,46 @@
+#dialog_index {
+    width: 440px;
+    background: white;
+    /* height: 290px; */
+    padding:1em 2.5em;
+    box-shadow: 6px 5px 5px #8b8b8b, 3px 3px 4px #888888;
+    border-radius: 5px;
+    position: absolute;
+    color: #ccc;
+    left: 20%;
+    top: 50%;
+    display: block;
+}
+
+.body {
+    background: #00000054;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 0 auto;
+    margin: 0 auto;
+} 
+
+
+#ex_section {
+    position: absolute;
+    top: 1em;
+    right: 1.5em;
+    text-transform: lowercase;
+    color: #696969;
+    font-weight: bold;
+    padding: .1em .6em;
+    cursor: pointer;
+    /* background: radial-gradient(#f0f0f0,#f1f1f1); */
+}
+
+@media screen {
+    #dialog_index {
+        left: 30%;
+        top: 15%;
+    }
+}
+

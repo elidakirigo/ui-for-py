@@ -1,0 +1,12 @@
+canvas {
+  /* height: 50vh; */
+  /* width: 40%; */
+  /* display: inline-block; */
+  border: .2em solid #ddd;
+  padding: 6px;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow:inset -3px -3px 2px #ffffff,inset 3px 3px 2px #ffffff;
+  background: #c0c0c0be;
+  cursor: crosshair;
+}

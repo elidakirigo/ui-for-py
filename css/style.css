@@ -1,0 +1,279 @@
+* {
+    margin: 0 auto;
+    border: 0 auto;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@700&display=swap');
+
+@media screen {
+
+    body {
+        background: white;
+        padding: 3em;
+        position: relative;
+    }
+
+    #hamburger,
+    #hamburger .fa-bars {
+        float: right;
+        font-size: 32px !important;
+        color: #1433a7;
+        cursor: pointer;
+    }
+
+    #hamburger .fa:hover {
+        color: #f50691;
+    }
+
+    #hamburger ul {
+        margin-top: 40px;
+        right: 40px;
+        display: none;
+        position: absolute;
+        list-style: none;
+        padding: .5em 1em;
+        border: 2px solid #1433a7;
+        border-radius: 6px;
+        color: #1433a7;
+    }
+
+    #hamburger ul>li {
+        font-size: 16px;
+        padding: 7px 5px;
+    }
+
+    #hamburger .fa {
+        font-size: 16px;
+        padding: 7px 5px;
+    }
+
+    #hamburger ul>li:hover,
+    #hamburger a:hover {
+        color: #f50691;
+    }
+
+    #hamburger a {
+        text-decoration: none;
+        color: #1433a7;
+    }
+
+    #hamburger ul>li:nth-child(1) {
+        border-bottom: 2px solid #1433a7;
+    }
+
+    #logo {
+        width: calc(100%);
+        margin-left: -10px;
+        height: 290px;
+        background: url('../img/S4L_CS6_page_01.png') no-repeat;
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    #heat span {
+        font-size: 230px;
+        color: #1433a7;
+        margin-left: calc(34%);
+        margin-top: -60px;
+    }
+
+    #heat p {
+        display: inline;
+        font-size: 192px;
+        font-weight: 100;
+        color: #1433a7;
+        font-family: 'Monda', sans-serif;
+        ;
+    }
+
+}
+
+@media (max-width:1250px) and (min-width: 850px) {
+
+    body {
+        background: white;
+        padding: 3em;
+        position: relative;
+    }
+
+    #hamburger,
+    #hamburger .fa-bars {
+        float: right;
+        font-size: 32px !important;
+        color: #1433a7;
+        cursor: pointer;
+    }
+
+    #hamburger .fa:hover {
+        color: #f50691;
+    }
+
+    #hamburger ul {
+        margin-top: 40px;
+        right: 40px;
+        display: none;
+        position: absolute;
+        list-style: none;
+        padding: .5em 1em;
+        border: 2px solid #1433a7;
+        border-radius: 6px;
+        color: #1433a7;
+    }
+
+    #hamburger ul>li {
+        font-size: 16px;
+        padding: 7px 5px;
+    }
+
+    #hamburger .fa {
+        font-size: 16px;
+        padding: 7px 5px;
+    }
+
+    #hamburger ul>li:hover,
+    #hamburger a:hover {
+        color: #f50691;
+    }
+
+    #hamburger a {
+        text-decoration: none;
+        color: #1433a7;
+    }
+
+    #hamburger ul>li:nth-child(1) {
+        border-bottom: 2px solid #1433a7;
+    }
+
+    #logo {
+        width: calc(100%);
+        margin-left: -10px;
+        height: 220px;
+        background: url('../img/S4L_CS6_page_01.png') no-repeat;
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    #heat span {
+        font-size: 140px;
+        color: #1433a7;
+        margin-left: calc(34%);
+        margin-top: -60px;
+    }
+
+    #heat p {
+        display: inline;
+        font-size: 132px;
+        font-weight: 100;
+        color: #1433a7;
+        font-family: 'Monda', sans-serif;
+        ;
+    }
+
+}
+
+/* screen and  */
+@media (max-width: 850px) {
+
+    body {
+        background: white;
+        padding: 3em;
+    }
+
+    #hamburger,
+    #hamburger .fa-bars {
+        float: right;
+        font-size: 32px !important;
+        color: #1433a7;
+        cursor: pointer;
+    }
+
+    #hamburger .fa:hover {
+        color: #f50691;
+    }
+
+    #hamburger ul {
+        margin-top: 40px;
+        right: 40px;
+        display: none;
+        position: absolute;
+        list-style: none;
+        padding: .5em 1em;
+        border: 2px solid #1433a7;
+        border-radius: 6px;
+        color: #1433a7;
+    }
+
+    #hamburger ul>li {
+        font-size: 16px;
+        padding: 7px 5px;
+    }
+
+    #hamburger .fa {
+        font-size: 16px;
+        padding: 7px 5px;
+    }
+
+    #hamburger ul>li:hover,
+    #hamburger a:hover {
+        color: #f50691;
+    }
+
+    #hamburger a {
+        text-decoration: none;
+        color: #1433a7;
+    }
+
+    #hamburger ul>li:nth-child(1) {
+        border-bottom: 2px solid #1433a7;
+    }
+
+    #logo {
+
+        width: calc(100%);
+        background: url('../img/S4L_CS6_page_01.png') no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        margin-left: 0px;
+        z-index: 80;
+        height: 100px;
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    #heat span {
+        font-size: 140px;
+        color: #1433a7;
+        margin-left: calc(20%);
+        margin-top: -60px;
+    }
+
+    #heat p {
+        display: inline;
+        font-size: 122px;
+        font-weight: 100;
+        color: #1433a7;
+        font-family: 'Monda', sans-serif;
+        ;
+    }
+}
+
+@media (max-width : 600px) {
+    #heat span {
+        font-size: 100px;
+        color: #1433a7;
+        margin-left: calc(20%);
+        margin-top: -60px;
+    }
+
+    #heat p {
+        display: inline;
+        font-size: 92px;
+        font-weight: 100;
+        color: #1433a7;
+        font-family: 'Monda', sans-serif;
+        ;
+    }
+}

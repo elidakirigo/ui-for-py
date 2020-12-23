@@ -1,0 +1,120 @@
+
+
+@media (min-width :600px) and (max-width: 850px) {
+    body {
+        background-color: #EEF7FD;
+    }
+
+    .wifi {
+        background-color: #0C69BF !important;
+        color: white;
+        font-weight: bold;
+        padding: 10px !important;
+        margin-top: 10px;
+        border: none !important;
+    }
+
+    .well {
+        background-color: white;
+        box-shadow: 4px 5px 6px #9c9c9c !important;
+    }
+
+    .scan {
+        float: right;
+        position: relative;
+        top: -30px;
+    }
+
+    p {
+        font-weight: bold;
+    }
+
+}
+
+@media screen and (min-width: 850px) {
+    body {
+        background-color: #EEF7FD;
+    }
+
+    .wifi {
+        background-color: #0C69BF !important;
+        color: white;
+        font-weight: bold;
+        padding: 10px !important;
+        margin-top: 10px;
+        border: none !important;
+    }
+
+    .well {
+        background-color: white;
+        box-shadow: 4px 5px 6px #9c9c9c !important;
+    }
+
+    .scan {
+        float: right;
+        position: relative;
+        top: -30px;
+    }
+
+    p {
+        font-weight: bold;
+
+    }
+
+
+}
+
+@media (max-width: 600px) {
+    body {
+        background-color: #EEF7FD;
+    }
+
+    .wifi {
+        background-color: #0C69BF !important;
+        color: white;
+        font-weight: bold;
+        padding: 10px !important;
+        margin-top: 10px;
+        border: none !important;
+    }
+
+    .well {
+        background-color: white;
+        box-shadow: 4px 5px 6px #9c9c9c !important;
+    }
+
+    .scan {
+        float: right;
+        position: relative;
+        top: -30px;
+    }
+
+    p {
+        font-weight: bold;
+
+    }
+
+}
+
+* {
+    text-transform: capitalize;
+}
+
+#table::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+#table::-webkit-scrollbar-track {
+    background: #cfcfcf;
+    /* color of the tracking area */
+}
+
+#table::-webkit-scrollbar-thumb {
+    background-color: #0C69BF;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 1px solid white;
+    /* creates padding around scroll thumb */
+}
