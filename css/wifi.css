@@ -102,9 +102,28 @@
     }
 
 }
+
 body {
     text-transform: capitalize;
 }
+
+#connection {
+    float: right;
+    margin-right: 25%;
+    margin-top: .3em !important;
+    font-size: 1em !important;
+    /* display: inline-block; */
+}
+
+.button_color {
+    background-color: #f50691;
+    color: #fff;
+}
+.button_color:hover {
+    background-color: #f50691 !important;
+    color: #fff;
+}
+
 #table::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */

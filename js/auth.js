@@ -25,7 +25,7 @@ $('#pwd_index_btn').click(function (e) {
     e.preventDefault();
 
     const password = document.getElementById('auth_pwd').value;
-    
+   
     const get_pwd = JSON.stringify({
         pwd: 'get_pwd'
     })
@@ -49,7 +49,7 @@ $('#pwd_index_btn').click(function (e) {
         ws.ondisconnect = function () {
             reload();
         };
-        ws.onmessage = function (e) {
+         ws.onmessage = function (e) {
 
             const data = JSON.parse(e.data);
              const real_password = data.pwd;
